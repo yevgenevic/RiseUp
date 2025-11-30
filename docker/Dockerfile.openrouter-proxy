@@ -1,0 +1,39 @@
+# Build stage
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+# Copy openrouter-proxy package files
+COPY openrouter-proxy/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy source code
+COPY openrouter-proxy/src ./src
+COPY openrouter-proxy/tsconfig.json ./
+
+# Build TypeScript
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy only production dependencies from builder
+COPY openrouter-proxy/package*.json ./
+RUN npm install --only=production
+
+# Copy built application from builder
+COPY --from=builder /app/dist ./dist
+
+# Expose port
+EXPOSE 3002
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+  CMD ps aux | grep -q "[n]ode dist/index.js" || exit 1
+
+# Start application
+CMD ["npm", "start"]

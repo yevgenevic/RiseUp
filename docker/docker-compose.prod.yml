@@ -146,7 +146,7 @@ services:
   openrouter-proxy:
     build:
       context: ..
-      dockerfile: docker/Dockerfile.backend
+      dockerfile: docker/Dockerfile.openrouter-proxy
     image: fintech-openrouter-proxy:latest
     container_name: fintech-openrouter-proxy-prod
     environment:
