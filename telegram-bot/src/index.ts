@@ -37,7 +37,7 @@ bot.onText(/\/start/, async (msg) => {
         `👋 Добро пожаловать, ${firstName}!\n\nВы уже авторизованы в RiseUp Bank.`,
         {
           reply_markup: {
-            keyboard: [['/balance', '/transactions'], ['/faq', '/apply_credit'], ['/help']],
+            keyboard: [[{ text: '/balance' }, { text: '/transactions' }], [{ text: '/faq' }, { text: '/apply_credit' }], [{ text: '/help' }]],
             resize_keyboard: true,
           },
         }
@@ -90,7 +90,7 @@ bot.on('message', async (msg) => {
       `✅ Успешно!\n\n🎉 Ваш аккаунт привязан к Telegram\n\nДоступные команды:\n/balance - Баланс\n/transactions - Последние транзакции\n/faq - FAQ\n/apply_credit - Заявка на кредит\n/help - Справка`,
       {
         reply_markup: {
-          keyboard: [['/balance', '/transactions'], ['/faq', '/apply_credit'], ['/help']],
+          keyboard: [[{ text: '/balance' }, { text: '/transactions' }], [{ text: '/faq' }, { text: '/apply_credit' }], [{ text: '/help' }]],
           resize_keyboard: true,
         },
       }
