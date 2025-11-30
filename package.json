@@ -1,0 +1,26 @@
+{
+  "name": "fintech-banking-platform",
+  "version": "1.0.0",
+  "description": "Full-stack fintech banking platform with AI integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "docker-compose -f docker/docker-compose.dev.yml up",
+    "dev:down": "docker-compose -f docker/docker-compose.dev.yml down",
+    "dev:logs": "docker-compose -f docker/docker-compose.dev.yml logs -f",
+    "build": "docker-compose -f docker/docker-compose.dev.yml build",
+    "backend:dev": "cd backend && npm run dev",
+    "frontend:dev": "cd frontend && npm run dev",
+    "worker:dev": "cd worker && npm run dev",
+    "bot:dev": "cd telegram-bot && npm run dev",
+    "proxy:dev": "cd openrouter-proxy && npm run dev"
+  },
+  "keywords": [
+    "fintech",
+    "banking",
+    "ai",
+    "openrouter"
+  ],
+  "author": "",
+  "license": "MIT"
+}

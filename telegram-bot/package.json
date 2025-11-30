@@ -1,0 +1,26 @@
+{
+  "name": "fintech-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for fintech platform",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "node --loader ts-node/esm --experimental-specifier-resolution=node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.63.0",
+    "axios": "^1.6.5",
+    "redis": "^4.6.12",
+    "pg": "^8.11.0",
+    "dotenv": "^16.3.1",
+    "pino": "^8.17.2",
+    "pino-pretty": "^10.3.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.5",
+    "@types/node-telegram-bot-api": "^0.63.0"
+  }
+}

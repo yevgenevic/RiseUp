@@ -1,0 +1,157 @@
+.dashboard {
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+.dashboard-header {
+  background: var(--color-white);
+  padding: 16px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.dashboard-header h2 {
+  color: var(--color-primary);
+  margin: 0;
+  font-size: 24px;
+}
+
+.dashboard-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.dashboard-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 250px;
+  background: var(--color-white);
+  border-right: 1px solid var(--color-border-light);
+  padding: 24px 0;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  position: sticky;
+  top: 60px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--color-text-gray);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.nav-item:hover {
+  background: #f0f7f0;
+  color: var(--color-primary);
+}
+
+.nav-item.active {
+  background: #e8f5e9;
+  color: var(--color-primary);
+  border-left: 4px solid var(--color-primary);
+  padding-left: 20px;
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 32px;
+}
+
+.dashboard-content h1 {
+  margin-bottom: 24px;
+  color: var(--color-primary-dark);
+}
+
+.balance {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 16px 0 8px 0;
+}
+
+.status {
+  font-size: 18px;
+  color: var(--color-primary);
+  margin: 16px 0 8px 0;
+}
+
+.count {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin: 16px 0 8px 0;
+}
+
+.card small {
+  display: block;
+  color: var(--color-text-gray);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+    padding: 16px 0;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0 16px;
+  }
+
+  .nav-item {
+    padding: 12px 16px;
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-item.active {
+    border-left: none;
+    border-bottom: 2px solid var(--color-primary);
+    padding-left: 16px;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+}
